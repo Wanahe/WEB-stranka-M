@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Minera – Voda plná sily</title>
+<meta name="description" content="Minera kalciová – prírodná minerálna voda z úpätia Strážovských vrchov s bohatým zdrojom vápnika a nízkym obsahom sodíka.">
+<meta property="og:title" content="Minera – Voda plná sily">
+<meta property="og:description" content="Prírodná minerálna voda s obsahom vápnika.">
+<meta property="og:image" content="images/hero.jpg">
+<link rel="icon" href="https://minera.sk/wp-content/uploads/2020/10/cropped-minera-270x270.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{--red:#a3202e;--navy:#1b2a6b;--sky:#e8f3fc;--blue:#2c8fe0;--orange:#f7922b;--teal:#22b0c8;--green:#74b82f;--ink:#1d2433;--muted:#5a6478;--radius:20px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+section[id]{scroll-margin-top:72px}
+body{font-family:Barlow,system-ui,sans-serif;color:var(--ink);line-height:1.65;background:#fff}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;color:var(--navy);line-height:1.15}
+h2{font-size:clamp(2rem,4vw,3rem);margin-bottom:1rem}
+.wrap{width:min(1120px,92%);margin:0 auto}
+section{padding:clamp(3.5rem,8vw,6.5rem) 0}
+.eyebrow{font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:.8rem;color:var(--red);margin-bottom:.6rem}
+
+/* header */
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid #e6edf5}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo img{height:34px}
+nav ul{display:flex;gap:2rem;list-style:none}
+nav a{text-decoration:none;font-weight:600;font-size:.95rem;color:var(--navy);padding:.3rem 0;border-bottom:2px solid transparent;transition:.2s}
+nav a:hover,nav a.active{color:var(--red);border-color:var(--red)}
+.burger{display:none;background:none;border:0;font-size:1.8rem;color:var(--navy);cursor:pointer}
+
+/* hero */
+.hero{padding:0;background:var(--sky)}
+.hero img{width:100%;height:auto;max-height:calc(100vh - 68px);object-fit:cover}
+
+/* quality */
+.quality{background:linear-gradient(180deg,#fff,var(--sky))}
+.q-grid{display:grid;grid-template-columns:260px 1fr;gap:3rem;align-items:center}
+.q-grid img{width:100%;max-width:260px;margin:auto}
+.q-grid p{color:var(--muted);font-size:1.08rem;margin-bottom:1rem}
+.btn{display:inline-block;background:var(--red);color:#fff;text-decoration:none;font-weight:700;padding:.9rem 2rem;border-radius:999px;transition:.2s;border:0;cursor:pointer;font-size:1rem}
+.btn:hover{background:var(--navy);transform:translateY(-2px)}
+
+/* products */
+.head{text-align:center;max-width:620px;margin:0 auto 3rem}
+.group-title{display:flex;align-items:center;gap:1rem;margin:2.5rem 0 1.5rem;font-weight:700;color:var(--navy);font-size:1.3rem}
+.group-title::after{content:"";flex:1;height:1px;background:#d5e2ef}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.card{background:#fff;border:1px solid #e3ecf5;border-radius:var(--radius);padding:1.5rem 1.2rem 1.6rem;text-align:center;transition:.25s;position:relative;overflow:hidden}
+.card::before{content:"";position:absolute;inset:0 0 auto;height:6px;background:var(--c)}
+.card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(27,42,107,.12)}
+.card .pic{height:340px;display:flex;align-items:flex-end;justify-content:center;background:radial-gradient(circle at 50% 60%,var(--sky),transparent 70%)}
+.card .pic img{max-height:100%;width:auto;object-fit:contain}
+.card h3{font-size:1.6rem;margin:1rem 0 .1rem}
+.size{font-weight:700;color:var(--c);font-size:1.1rem;margin-bottom:.9rem}
+.tags{display:flex;flex-wrap:wrap;justify-content:center;gap:.4rem}
+.tags span{font-size:.72rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;background:var(--sky);color:var(--navy);padding:.3rem .7rem;border-radius:999px}
+.cta{text-align:center;margin-top:3rem}
+.cta .btn{font-size:1.1rem;padding:1.1rem 3.2rem;letter-spacing:.08em}
+
+/* calcium / sodium */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center}
+.split.rev .media{order:2}
+.media img{border-radius:var(--radius);width:100%;box-shadow:0 20px 50px rgba(27,42,107,.15)}
+.split p{color:var(--muted);margin-bottom:1rem}
+.calcium{background:#fff}
+.power{background:var(--navy);color:#fff;border-radius:var(--radius);padding:2.5rem;margin-top:4rem;display:grid;grid-template-columns:220px 1fr;gap:2.5rem;align-items:center}
+.power h2{color:#fff;font-size:2.2rem}
+.power p{color:#d8e2f7;margin-bottom:.8rem}
+.power small{display:block;font-size:.85rem;color:#aebbe0}
+.power a{color:#fff;font-weight:600}
+.power img{margin:auto;max-height:260px;width:auto}
+.people{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;margin-top:3.5rem}
+.person{border-radius:16px;overflow:hidden;background:var(--sky)}
+.person img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.person div{padding:1rem 1.1rem 1.2rem}
+.person h3{font-size:1.25rem;margin-bottom:.3rem}
+.person p{font-size:.9rem;color:var(--muted);line-height:1.5}
+.sodium{background:var(--sky)}
+
+/* footer */
+footer{background:#10183f;color:#c9d3f2;padding:4rem 0 2rem}
+.f-grid{display:grid;grid-template-columns:1.2fr 1fr 1.2fr;gap:2.5rem}
+footer img{height:40px;width:auto;margin-bottom:1rem}
+footer h4{color:#fff;margin-bottom:.8rem}
+footer ul{list-style:none}
+footer a{text-decoration:none}
+footer a:hover{color:#fff;text-decoration:underline}
+footer li{margin-bottom:.4rem}
+.f-bottom{margin-top:3rem;padding-top:1.5rem;border-top:1px solid #27316b;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-size:.9rem}
+.f-bottom img{height:28px;margin:0}
+
+@media(max-width:900px){
+ .burger{display:block}
+ nav{position:absolute;top:68px;left:0;right:0;background:#fff;border-bottom:1px solid #e6edf5;max-height:0;overflow:hidden;transition:max-height .3s}
+ nav.open{max-height:420px}
+ nav ul{flex-direction:column;gap:0;padding:.5rem 4%}
+ nav a{display:block;padding:.9rem 0;border:0}
+ .q-grid,.split,.power,.f-grid{grid-template-columns:1fr}
+ .split.rev .media{order:0}
+ .grid{grid-template-columns:repeat(2,1fr)}
+ .people{grid-template-columns:repeat(2,1fr)}
+ .q-grid{text-align:center}
+}
+@media(max-width:560px){
+ .grid{grid-template-columns:1fr}
+ .people{grid-template-columns:1fr}
+ .card .pic{height:300px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header>
+ <div class="wrap nav">
+  <a class="logo" href="#domov" aria-label="Minera"><img src="https://minera.sk/wp-content/uploads/2020/11/minera_napis.svg" alt="Minera"></a>
+  <button class="burger" aria-label="Menu" aria-expanded="false">☰</button>
+  <nav>
+   <ul>
+    <li><a href="#domov">Domov</a></li>
+    <li><a href="#znacka-kvality">Značka kvality</a></li>
+    <li><a href="#produkty">Produkty</a></li>
+    <li><a href="#vapnik">Sila vápnika</a></li>
+    <li><a href="#sodik">Nízky obsah sodíka</a></li>
+    <li><a href="#kontakt">Kontakt</a></li>
+   </ul>
+  </nav>
+ </div>
+</header>
+
+<main>
+<section id="domov" class="hero">
+ <img src="images/hero.jpg" alt="Minera kalciová – prírodná minerálna voda s obsahom vápnika">
+</section>
+
+<section id="znacka-kvality" class="quality">
+ <div class="wrap q-grid">
+  <img src="https://minera.sk/wp-content/uploads/2021/10/znackakval_1st.png" alt="Značka kvality 1. stupňa" loading="lazy">
+  <div>
+   <p class="eyebrow">Ocenenie</p>
+   <h2>Značka kvality – prvého stupňa</h2>
+   <p>MINERA, voda z prameňa, ktorý pochádza z úpätia Strážovských vrchov, obsahuje prírodný vápnik a nízky obsah sodíka, a preto priaznivo pôsobí na ľudský organizmus. Vďaka svojmu zloženiu si zaslúžila aj pomenovanie „voda plná sily“. Nízky obsah sodíka a stredná mineralizácia ju predurčujú na každodenné pitie.</p>
+   <p>Jej silu a kvalitu teraz ocenilo aj Ministerstvo pôdohospodárstva a rozvoja vidieka SR, ktoré jej udelilo Značku kvality 1. stupňa.</p>
+   <a class="btn" href="#vapnik">Viac o zložení</a>
+  </div>
+ </div>
+</section>
+
+<section id="produkty">
+ <div class="wrap">
+  <div class="head">
+   <p class="eyebrow">Naše produkty</p>
+   <h2>Vyberte si svoju Minera</h2>
+  </div>
+
+  <h3 class="group-title">Fľaša 1,5 L</h3>
+  <div class="grid">
+   <article class="card" style="--c:var(--orange)">
+    <div class="pic"><img src="images/p15-perliva.png" alt="Minera kalciová perlivá 1,5 L" loading="lazy"></div>
+    <h3>Minera kalciová perlivá</h3><p class="size">1,5 L</p>
+    <div class="tags"><span>BPA free</span><span>100% recyklovateľná</span><span>Zálohovaná</span></div>
+   </article>
+   <article class="card" style="--c:var(--teal)">
+    <div class="pic"><img src="images/p15-jemna.png" alt="Minera kalciová jemná 1,5 L" loading="lazy"></div>
+    <h3>Minera kalciová jemná</h3><p class="size">1,5 L</p>
+    <div class="tags"><span>BPA free</span><span>100% recyklovateľná</span><span>Zálohovaná</span></div>
+   </article>
+   <article class="card" style="--c:var(--green)">
+    <div class="pic"><img src="images/p15-ticha.png" alt="Minera kalciová tichá 1,5 L" loading="lazy"></div>
+    <h3>Minera kalciová tichá</h3><p class="size">1,5 L</p>
+    <div class="tags"><span>BPA free</span><span>100% recyklovateľná</span><span>Zálohovaná</span></div>
+   </article>
+  </div>
+
+  <h3 class="group-title">Fľaša 0,5 L</h3>
+  <div class="grid">
+   <article class="card" style="--c:var(--orange)">
+    <div class="pic"><img src="images/p05-perliva.png" alt="Minera kalciová perlivá 0,5 L" loading="lazy"></div>
+    <h3>Minera kalciová perlivá</h3><p class="size">0,5 L</p>
+    <div class="tags"><span>BPA free</span><span>100% recyklovateľná</span><span>Zálohovaná</span></div>
+   </article>
+   <article class="card" style="--c:var(--teal)">
+    <div class="pic"><img src="images/p05-jemna.png" alt="Minera kalciová jemná 0,5 L" loading="lazy"></div>
+    <h3>Minera kalciová jemná</h3><p class="size">0,5 L</p>
+    <div class="tags"><span>BPA free</span><span>100% recyklovateľná</span><span>Zálohovaná</span></div>
+   </article>
+   <article class="card" style="--c:var(--green)">
+    <div class="pic"><img src="images/p05-ticha.png" alt="Minera kalciová tichá 0,5 L" loading="lazy"></div>
+    <h3>Minera kalciová tichá</h3><p class="size">0,5 L</p>
+    <div class="tags"><span>BPA free</span><span>100% recyklovateľná</span><span>Zálohovaná</span></div>
+   </article>
+  </div>
+
+  <div class="cta"><a class="btn" href="https://eshop.miticka.sk/mineralna_voda/" target="_blank" rel="noopener">ESHOP</a></div>
+ </div>
+</section>
+
+<section id="vapnik" class="calcium">
+ <div class="wrap">
+  <div class="split">
+   <div class="media"><img src="https://minera.sk/wp-content/uploads/2020/11/AdobeStock_128890362-copy.jpeg" alt="Vápnik – základný stavebný prvok kostí" loading="lazy"></div>
+   <div>
+    <p class="eyebrow">Minerály</p>
+    <h2>Sila vápnika</h2>
+    <p>Vápnik je základným stavebným prvkom nielen kostí a zubov, ale všetkých buniek ľudského tela. Je dôležité dbať na jeho dostatočný príjem pomocou stravy, nakoľko si ho ľudské telo nedokáže samé tvoriť. Vápnik má dôležitú úlohu pri metabolizme a pozitívne ovplyvňuje chudnutie. Minerálna voda s prírodným obsahom kalcia neobsahuje nič, čo by dobrému vstrebávaniu vápnika bránilo. Prítomnosť hydrogénuhličitanov aj menšie množstvo horčíka môže využiteľnosť vápnika ešte podporiť. Ionizovaná, voľná forma vápnika v minerálnej vode je ideálna pre jednoduché vstrebávanie v tráviacom systéme. Vápnik pozitívne vplýva na činnosť nášho srdca a svalov. Správna hladina kalcia znižuje krvný tlak, cholesterol a upokojuje nervovú sústavu. Vápnikové minerálne vody sú preto výborným nekalorickým zdrojom vápnika.</p>
+   </div>
+  </div>
+
+  <div class="power">
+   <img src="https://minera.sk/wp-content/uploads/2020/12/flase_vapnik-2.png" alt="Fľaše Minera" loading="lazy">
+   <div>
+    <h2>Voda plná sily</h2>
+    <p>Náš organizmus si nedokáže sám produkovať vápnik, a preto musí človek dbať na jeho pravidelný prísun. Minerálna voda MINERA obsahuje 256 mg vápnika v jednej 1,5 litrovej fľaši. To predstavuje cca 30 % odporúčanej výživovej dávky* pre dospelú osobu. Vďaka nízkemu obsahu sodíka, MINERA nezaťažuje srdcovo-cievny systém.</p>
+    <small>* Zdroj: Vestník Ministerstva zdravotníctva Slovenskej republiky. Odporúčané výživové dávky pre obyvateľstvo v Slovenskej republike (9. revízia)</small>
+    <p style="margin-top:.8rem"><a href="https://minera.sk/wp-content/uploads/2020/11/vestnik-2015-4-5.pdf" target="_blank" rel="noopener">Odporúčané výživové dávky (MZ SR) →</a></p>
+   </div>
+  </div>
+
+  <div class="people">
+   <div class="person"><img src="https://minera.sk/wp-content/uploads/2020/12/Sportovci-copy.jpg" alt="" loading="lazy"><div><h3>Športovci</h3><p>Počas športu sa v našom tele zvyšuje vstrebávanie vápnika z čreva a na základe toho aj následná potreba jeho dopĺňania.</p></div></div>
+   <div class="person"><img src="https://minera.sk/wp-content/uploads/2020/12/Fyzicky_pracujuci_ludia-copy.jpg" alt="" loading="lazy"><div><h3>Manuálne pracujúci</h3><p>Pri zvýšenej fyzickej záťaži naše telo vyžaduje viac vápnika, ktorý využíva na zvýšenie svalovej sily.</p></div></div>
+   <div class="person"><img src="https://minera.sk/wp-content/uploads/2020/12/Vegani-copy.jpg" alt="" loading="lazy"><div><h3>Vegáni</h3><p>Pri vylúčení mliečnych výrobkov zo každodennej stravy je dôležité myslieť na pravidelný prísun vápnika z iných plnohodnotných zdrojov.</p></div></div>
+   <div class="person"><img src="https://minera.sk/wp-content/uploads/2020/12/Tehotne_zeny-copy.jpg" alt="" loading="lazy"><div><h3>Tehotné ženy</h3><p>Vápnik je kľúčovým minerálom pre ženy počas tehotenstva. Pomáha pri rozvoji a raste životne dôležitých štruktúr plodu.</p></div></div>
+   <div class="person"><img src="https://minera.sk/wp-content/uploads/2020/12/Laktozova_intolerancia-copy.jpg" alt="" loading="lazy"><div><h3>Pri intolerancii na laktózu</h3><p>Ľudia, ktorí na základe laktózovej intolerancie vylúčili zo stravy mliečne výrobky, by mali príjem vápnika nahradiť iným hodnotným zdrojom.</p></div></div>
+   <div class="person"><img src="https://minera.sk/wp-content/uploads/2020/12/Ludia_s_nadvahou-copy.jpg" alt="" loading="lazy"><div><h3>Ľudia s nadváhou</h3><p>Vápnik spolupôsobí pri absorpcii tukov v črevách a znižuje celkový energetický príjem. Nedostatočný príjem vápnika sa preto môže spájať so zvyšovaním telesnej hmotnosti a telesného tuku.</p></div></div>
+   <div class="person"><img src="https://minera.sk/wp-content/uploads/2020/12/Problemy_s_kostami-copy.jpg" alt="" loading="lazy"><div><h3>Pri problémoch s kosťami</h3><p>Strava je základným zdrojom prísunu látok, ktoré telo potrebuje. Pri prevencii osteoporózy je kľúčová vyvážená výživa s dostatočným množstvom vápnika.</p></div></div>
+  </div>
+ </div>
+</section>
+
+<section id="sodik" class="sodium">
+ <div class="wrap split rev">
+  <div class="media"><img src="https://minera.sk/wp-content/uploads/2020/12/pexels-engin-akyurt-2952653-copy.jpg" alt="Nízky obsah sodíka" loading="lazy"></div>
+  <div>
+   <p class="eyebrow">Každodenné pitie</p>
+   <h2>S nízkym obsahom sodíka</h2>
+   <p>Sodík pomáha v tele vytvárať zásadité prostredie, ktoré napomáha k udržaniu zdravia. Väčšiu časť dennej dávky sodíka prijmeme denne solením jedla, na každodenné pitie preto sa odporúča vyberať si vody s jeho nižším obsahom. Vysoký príjem sodíka zo soli zapríčiňuje zvýšený krvný tlak a núti obličky vylučovať viac tekutín. To môže mať za následok vznik kardiovaskulárnych porúch akými sú mŕtvica, infarkt, či akútne zlyhanie srdca. Rovnako aj niektoré prípady obezity môžu prameniť zo zvýšeného príjmu soli. Smernice v Spojených štátoch odporúčajú prijímať menej ako 2,3 g soli denne, čo predstavuje asi jednu čajovú lyžičku. Pre ľudí po päťdesiatke je to menej ako 1,5 g. Tieto odporúčania vychádzajú z výskumov, ktoré opisujú prepojenie rôznych ochorení na vysoký príjem soli.</p>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer id="kontakt">
+ <div class="wrap">
+  <div class="f-grid">
+   <div>
+    <img src="https://minera.sk/wp-content/uploads/2020/10/minera_full_white.svg" alt="Minera">
+    <p>Trenčianske minerálne vody, a.s.<br>323 Trenčianske Mitice 913 22<br><a href="mailto:miticka@miticka.eu">miticka@miticka.eu</a></p>
+   </div>
+   <div>
+    <h4>Odkazy</h4>
+    <ul>
+     <li><a href="https://tmv.filecamp.com/s/all/fo/Qs3DDGvGHpxfBglY" target="_blank" rel="noopener">Media Kit</a></li>
+     <li><a href="https://eshop.miticka.sk/mineralna_voda/" target="_blank" rel="noopener">Eshop</a></li>
+     <li><a href="#produkty">Produkty</a></li>
+     <li><a href="https://minera.sk/ekologia/" target="_blank" rel="noopener">Ekológia</a></li>
+    </ul>
+   </div>
+   <div>
+    <h4>Firemné údaje</h4>
+    <ul><li>IČO 35867159</li><li>DIČ 2021751985</li><li>IČ DPH SK2021751985</li></ul>
+    <ul style="display:flex;gap:1rem;margin-top:1rem">
+     <li><a href="#">Facebook</a></li><li><a href="#">X</a></li><li><a href="#">Instagram</a></li><li><a href="https://minera.sk/feed/">RSS</a></li>
+    </ul>
+   </div>
+  </div>
+  <div class="f-bottom">
+   <span>© <span id="yr">2026</span> Trenčianske minerálne vody, a.s.</span>
+   <img src="https://minera.sk/wp-content/uploads/2020/10/TMV_A_biele.svg" alt="Trenčianske minerálne vody">
+  </div>
+ </div>
+</footer>
+
+<script>
+document.getElementById('yr').textContent=new Date().getFullYear();
+const nav=document.querySelector('nav'),burger=document.querySelector('.burger');
+burger.addEventListener('click',()=>{const o=nav.classList.toggle('open');burger.setAttribute('aria-expanded',o)});
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');burger.setAttribute('aria-expanded',false)}));
+const links=[...nav.querySelectorAll('a')];
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){links.forEach(l=>l.classList.toggle('active',l.getAttribute('href')==='#'+e.target.id))}}),{rootMargin:'-45% 0px -50% 0px'});
+document.querySelectorAll('section[id],footer[id]').forEach(s=>io.observe(s));
+</script>
+</body>
+</html>
